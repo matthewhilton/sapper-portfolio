@@ -4,34 +4,56 @@
 	import Hero from "../components/Hero.svelte"
 </script>
 
-<style>
-	#main {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-</style>
-
 <svelte:head>
 	<title>Matthew Hilton</title>
 </svelte:head>
 
-<div id="main">
-	<Hero />
+<style>
+	h3 {
+		background-color: #3d362f;
+		color: white;
+		margin: 0;
+	}
 
-	<FeaturedItem data={{
-		id: 1,
-		coverImageUrl: "https://storage.googleapis.com/portfolio_imagestore/application::workitem.workitem/c45736eaeb644e2aa3c6e4e67a08c7b6.png",
-		coverImageAlt: "Petrichor task manager cover",
-		title: "Petrichor Task Manager",
-		shortDescription: "Driven by the amount of due dates and tasks to remember at university, I created Petrichor so I could easily keep track of these and access them anywhere.",
-	}} flipped={false}/>
+	#more {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-	<FeaturedItem data={{
-		id: 1,
-		coverImageUrl: "https://storage.googleapis.com/portfolio_imagestore/application::workitem.workitem/c45736eaeb644e2aa3c6e4e67a08c7b6.png",
-		coverImageAlt: "Petrichor task manager cover",
-		title: "Petrichor Task Manager",
-		shortDescription: "Driven by the amount of due dates and tasks to remember at university, I created Petrichor so I could easily keep track of these and access them anywhere.",
-	}} flipped={true}/>
-</div>
+	#more > div {
+		background-color: #3d362f;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		border-radius: 8px;
+		padding: 20px;
+		margin-top: 50px;
+	}
+</style>
+
+<Hero />
+
+<FeaturedItem data={{
+	id: 1,
+	coverImageUrl: "https://storage.googleapis.com/portfolio_imagestore/application::workitem.workitem/c45736eaeb644e2aa3c6e4e67a08c7b6.png",
+	coverImageAlt: "Petrichor task manager cover",
+	title: "Petrichor Task Manager",
+	shortDescription: "Driven by the amount of due dates and tasks to remember at university, I created Petrichor so I could easily keep track of these and access them anywhere.",
+}} flipped={false}/>
+
+<FeaturedItem data={{
+	id: 1,
+	coverImageUrl: "https://storage.googleapis.com/portfolio_imagestore/application::workitem.workitem/c45736eaeb644e2aa3c6e4e67a08c7b6.png",
+	coverImageAlt: "Petrichor task manager cover",
+	title: "Petrichor Task Manager",
+	shortDescription: "Driven by the amount of due dates and tasks to remember at university, I created Petrichor so I could easily keep track of these and access them anywhere.",
+}} flipped={true}/>
+
+<a href="/work" id="more">
+	<div>
+		<h3> View More Projects </h3>
+	</div>
+</a>
+

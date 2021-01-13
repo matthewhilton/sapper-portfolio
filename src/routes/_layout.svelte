@@ -7,13 +7,18 @@
 	:global(*) {
 		font-family: 'Roboto', sans-serif;
 		background-color: rgb(245, 241, 237);
+	}
+
+	:global(h1, h2, h3, p, a) {
 		color: black;
+		text-decoration: none;
 	}
 
 	#container {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		margin-bottom: 300px;
 	}
 
 	main {

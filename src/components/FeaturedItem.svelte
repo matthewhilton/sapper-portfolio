@@ -1,19 +1,24 @@
 <script>
+    import Lazy from 'svelte-lazy';
+    import ImagePlaceholder from './ImagePlaceholder.svelte';
+    import FaRegFolder from 'svelte-icons/fa/FaRegFolder.svelte'
+    import FaRegFolderOpen from 'svelte-icons/fa/FaRegFolderOpen.svelte'
+import Hoverable from './Hoverable.svelte';
+
     export let data = {};
     export let flipped = false;
     $: projectLink = "/item/" + data.id
 </script>
 
 <style>
-    img {
-       width: 60%;
-       height: auto;
-       max-width: 700px;
+    #coverImage {
+        max-width: 650px;
     }
 
     #outer {
         width: 80%;
         display: flex;
+        margin-bottom: 50px;
     }
 
     #inner {
@@ -26,7 +31,6 @@
     }
 
     .flipped {
-        
         align-items: flex-end;
         text-align: end;
     }
@@ -44,6 +48,18 @@
         margin: 0;
     }
 
+    .icon {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    .projectLink {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+
     @media only screen and (max-width: 1200px) {
       #outer {
           width: 100%;
@@ -54,10 +70,9 @@
         flex-wrap: wrap;
       }
 
-      img {
-          width: 100%;
-          max-width: 100%;
-      }
+      #coverImage {
+        max-width: 100%;
+    }
     }
 </style>
 
@@ -66,8 +81,31 @@
         <h1 class:flipped>{data.title}</h1>
         <p class:flipped>{data.shortDescription}</p>
 
-        <a href={projectLink}> View Project </a>
-    </div>
+        
+        <Hoverable let:hovering={hovering}>
+            <a href={projectLink}>
+                <div class="projectLink">
+                        <b>View Project</b>
+                    <div class="icon">
+                        {#if hovering}
+                        <FaRegFolderOpen />
+                        {:else}
+                        <FaRegFolder/>
+                        {/if}
+                    </div>
+                </div>
+            </a>
+        </Hoverable>
 
-    <img src={data.coverImageUrl} alt={data.coverImageAlt} />
+    </div>
+    <Lazy 
+    height={300} 
+    placeholder={ImagePlaceholder}
+    placeholderProps={{size: 300}}
+    >
+        <img id="coverImage"
+        alt={data.coverImageAlt}
+        src={data.coverImageUrl}
+         />
+    </Lazy>
 </div>

@@ -31,7 +31,6 @@
         background: none;
         font-size: 120%;
         margin-left: 10px;
-        margin-right: 10px;
     }
 
     nav {
