@@ -1,8 +1,13 @@
 <style>
     h1 {
-        margin: none;
-        padding: none;
+        margin: 0;
+        padding: 0;
 		font-weight: bold;
+    }
+    
+    p {
+        margin: 0;
+        color: #969696;
     }
 
     #headerDiv {
@@ -12,6 +17,11 @@
     @media only screen and (max-width: 600px) {
         h1 {
             text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            display: none;
         }
     }
 
@@ -31,8 +41,7 @@
     }
 
     #outer {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin: 20px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -49,6 +58,7 @@
     <div id="headerDiv">
         <a href="/">
             <h1>Matthew Hilton</h1>
+            <p> web developer </p>
         </a>
     </div>
     

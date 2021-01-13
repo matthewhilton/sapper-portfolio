@@ -9,10 +9,42 @@
 		background-color: rgb(245, 241, 237);
 		color: black;
 	}
+
+	#container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	main {
+		max-width: 1200px;
+	}
+
+	#flex {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 1200px;
+	}
+
+	@media only screen and (max-width: 1200px) {
+		main {
+			width: 100%;
+		}
+
+		#flex {
+			width: 100%;
+		}
+	}
 </style>
 
-<Nav />
-
-<main>
-	<slot></slot>
-</main>
+<div id="container">
+	<main>
+		<Nav />
+		<div id="flex">
+			<slot>
+				
+			</slot>
+		</div>
+	</main>
+</div>
