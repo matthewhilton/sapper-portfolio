@@ -23,9 +23,14 @@
         p {
             display: none;
         }
+
+        .hideOnMobile {
+            display: none;
+        }
     }
 
     nav > a  {
+        padding: 10px;
         border: none;
         font-weight: bold;
         background: none;
@@ -33,19 +38,24 @@
         margin-left: 10px;
     }
 
+    nav > a:hover {
+        background-color: #3d362f;
+        color: white;
+    }
+
     nav {
         justify-content: center;
-        flex-grow: 1;
         text-align: center;
     }
 
     #outer {
-        margin: 20px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         flex-direction: row;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     a {
@@ -63,7 +73,8 @@
     
     <nav>
         <a href="/work">Work</a>
-        <a href="/study">Study</a>
+        <a href="/study" class="hideOnMobile">Study</a>
+        <a href="/blog">Blog</a>
         <a href="/contact">Contact</a>
     </nav>
 </div>

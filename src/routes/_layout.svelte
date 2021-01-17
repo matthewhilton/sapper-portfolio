@@ -16,9 +16,10 @@
 
 	#container {
 		display: flex;
-		align-items: center;
-		flex-direction: column;
+		justify-content: center;
+		padding: 20px;
 		margin-bottom: 300px;
+
 	}
 
 	main {
@@ -26,19 +27,16 @@
 	}
 
 	#flex {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 		width: 1200px;
 	}
 
 	@media only screen and (max-width: 1200px) {
 		main {
-			width: 100%;
+			max-width: 100%;
 		}
 
 		#flex {
-			width: 100%;
+			max-width: 100%;
 		}
 	}
 </style>

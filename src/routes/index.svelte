@@ -51,7 +51,7 @@
 	shortDescription: "Driven by the amount of due dates and tasks to remember at university, I created Petrichor so I could easily keep track of these and access them anywhere.",
 }} flipped={true}/>
 
-<a href="/work" id="more">
+<a href="/work#other" id="more">
 	<div>
 		<h3> View More Projects </h3>
 	</div>
