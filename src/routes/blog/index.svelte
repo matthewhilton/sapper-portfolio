@@ -1,34 +1,39 @@
+<svelte:head>
+    <title>Blog | Matthew Hilton</title>
+</svelte:head>
+
 <script context="module">
-	export function preload() {
-		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
-			return { posts };
-		});
+    // Fetch medium feed in JSON form
+    export function preload(page, session) {
+		const request = this.fetch("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40matthew-h");
+		return { request };
 	}
 </script>
 
 <script>
-	export let posts;
+    import MediumStoryCard from "../../components/MediumStoryCard.svelte";
+    export let request;
 </script>
 
 <style>
-	ul {
-		margin: 0 0 1em 0;
-		line-height: 1.5;
-	}
+    .container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 </style>
 
-<svelte:head>
-	<title>Blog</title>
-</svelte:head>
-
-<h1>Recent posts</h1>
-
-<ul>
-	{#each posts as post}
-		<!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-		<li><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></li>
-	{/each}
-</ul>
+<div class="container">
+    {#await request}
+    <p> Loading... </p>
+    {:then data}
+        {#await data.json()}
+        <p> Loading... </p>
+        {:then response}
+            {#each response.items as story}
+                <MediumStoryCard data={story} />
+            {/each}
+        {/await}
+    {:catch error}
+    <p style="color: red">{error.message}</p>
+    {/await}
+</div>
