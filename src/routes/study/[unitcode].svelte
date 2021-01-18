@@ -12,6 +12,7 @@
     import { query } from "svelte-apollo"
 import Masonry from 'svelte-masonry/Masonry.svelte';
 import WorkItem from '../../components/WorkItem.svelte';
+import StackItem from '../../components/StackItem.svelte';
 
     const dataQuery = query(GET_UNIT_DATA, { variables: { "unitcode": unitcode }})
 
@@ -27,6 +28,12 @@ import WorkItem from '../../components/WorkItem.svelte';
     h1 {
         color: white;
         padding: 10px;
+    }
+
+    .stackContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
 </style>
@@ -45,10 +52,19 @@ import WorkItem from '../../components/WorkItem.svelte';
             {#if unit.workitems.length > 0}
                 <h3>Artefacts</h3>
                 <Masonry gridGap="10px">
-                    {#each unit.workitems as artefact (artefact.slug)}
+                    {#each unit.workitems as artefact (artefact.id)}
                         <WorkItem data={artefact} maxWidth={300} />
                     {/each}
                 </Masonry>
+            {/if}
+
+            {#if unit.stackitems.length > 0}
+                <h3> Languages/Stack </h3>
+                <div class="stackContainer">
+                    {#each unit.stackitems as stackitem (stackitem.id)}
+                        <StackItem data={stackitem} />
+                    {/each}
+                </div>
             {/if}
         {/each}
     {/if}

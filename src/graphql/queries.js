@@ -19,11 +19,19 @@ query UnitData($unitcode: String!) {
     code
     description
     workitems {
+      id
       title
       slug
       cover {
         url
       }
+    }
+    stackitems {
+      id
+      logo {
+        url
+      }
+      title
     }
   }
 }
@@ -37,6 +45,7 @@ query {
     featured
     shortdescription
     slug
+    id
     cover {
       url
     }
