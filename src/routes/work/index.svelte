@@ -6,6 +6,11 @@
     import Masonry from 'svelte-masonry/Masonry.svelte'
     import Heading from '../../components/Heading.svelte';
     import WorkItem from '../../components/WorkItem.svelte';
+
+    import { GET_WORKITEMS_LIST } from '../../graphql/queries'
+    import { query } from "svelte-apollo"
+
+    const q = query(GET_WORKITEMS_LIST)
 </script>
 
 <style>
@@ -15,12 +20,30 @@
     }
 </style>
 
-<div class="header"><Heading title="Featured" /></div>
-<Masonry gridGap="10px">
-    <WorkItem data={{title: "Stocks API Viewer", imageUrl: "https://storage.googleapis.com/portfolio_imagestore/application::workitem.workitem/cc47f8f7bbb8480a9da04f7543829d9a.png"}}/>
-    <WorkItem data={{title: "Photoshop Neon Sign", imageUrl: "https://storage.googleapis.com/portfolio_imagestore/workitem/IMG_20190614_173418.jpg"}}/>
-</Masonry>
-<div class="header" id="other"><Heading title="Other Projects" /></div>
+{#if $q.loading}
+    <p>Loading...</p>
+    {:else if $q.error}
+    <p> Error loading: {$q.error.message} </p>
+    {:else if $q.data}
+        <div class="header"><Heading title="Featured" /></div>
+        <Masonry gridGap="10px">
+            {#each $q.data.workitems as item}
+                {#if item.featured}
+                    <WorkItem data={item}/>
+                {/if}
+            {/each}
+        </Masonry>
+
+        <div class="header" id="other"><Heading title="Other Projects" /></div>
+        <Masonry gridGap="10px">
+            {#each $q.data.workitems as item}
+                {#if !item.featured}
+                    <WorkItem data={item}/>
+                {/if}
+            {/each}
+        </Masonry>
+    {/if}
+
 
 
 

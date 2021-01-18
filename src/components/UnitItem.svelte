@@ -30,12 +30,12 @@
 
 </style>
 
-<a href={"/study/"+data.unitCode}>
+<a href={"/study/"+data.code}>
     <div class="container" style="--theme-color: {data.color}">
         <h1>{data.title}</h1>
 
         <div class="inner">
-            <b><p>{data.unitCode}</p></b>
+            <b><p>{data.code}</p></b>
             <p>{data.tagline}</p>
         </div>
     </div>

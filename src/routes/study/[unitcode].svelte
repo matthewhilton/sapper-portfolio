@@ -7,6 +7,38 @@
 
 <script>
     export let unitcode;
+
+    import { GET_UNIT_DATA } from '../../graphql/queries'
+    import { query } from "svelte-apollo"
+
+    const dataQuery = query(GET_UNIT_DATA, { variables: { "unitcode": unitcode }})
+
+    $: dataQuery.refetch({ "unitcode": unitcode})
 </script>
 
-<p>{unitcode}</p>
+<style>
+    .container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    h1 {
+        color: white;
+        padding: 10px;
+    }
+
+</style>
+
+<div class="container">
+    {#if $dataQuery.loading}
+    <p>Loading...</p>
+    {:else if $dataQuery.error}
+    <p> Error loading: {$dataQuery.error.message} </p>
+    {:else}
+        {#each [$dataQuery.data.studyunit] as unit (unit.id)}
+            <h1 style={"background-color: " + unit.color}>{unit.title}</h1>
+            <h2>{unit.code}</h2>
+            <p>{unit.description}</p>
+        {/each}
+    {/if}
+</div>

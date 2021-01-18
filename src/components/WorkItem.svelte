@@ -32,8 +32,8 @@
     placeholderProps={{size: 300}}
     >
         <img
-        alt={data.imageAlt}
-        src={data.imageUrl}
+        alt="cover"
+        src={data.cover.url}
          />
     </Lazy>
 

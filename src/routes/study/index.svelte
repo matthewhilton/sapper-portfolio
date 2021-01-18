@@ -23,16 +23,12 @@
     {:else if $units.error}
     <p> Error loading units: {$units.error.message} </p>
     {:else}
-        {#each $units.data.studyunits as unit}
-            <p> {unit.title} </p>
-        {/each}
+        <Masonry gridGap="10px">
+            {#each $units.data.studyunits as unit}
+                <UnitItem data={unit} />
+            {/each}
+        </Masonry>
     {/if}
-    <Masonry gridGap="10px">
-        <UnitItem data={{title: "Building IT Systems", color: "blue", unitCode: "IFB104", tagline: "python programming"}} />
-        <UnitItem data={{title: "Building IT Systems", color: "red", unitCode: "IFB104", tagline: "python programming"}} />
-        <UnitItem data={{title: "Building IT Systems", color: "red", unitCode: "IFB104", tagline: "python programming and some other stuff that is cool"}} />
-        <UnitItem data={{title: "Building IT Systems", color: "red", unitCode: "IFB104", tagline: "python programming"}} />
-    </Masonry>
 </div>
 
 
