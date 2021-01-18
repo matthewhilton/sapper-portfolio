@@ -10,6 +10,8 @@
 
     import { GET_UNIT_DATA } from '../../graphql/queries'
     import { query } from "svelte-apollo"
+import Masonry from 'svelte-masonry/Masonry.svelte';
+import WorkItem from '../../components/WorkItem.svelte';
 
     const dataQuery = query(GET_UNIT_DATA, { variables: { "unitcode": unitcode }})
 
@@ -39,6 +41,15 @@
             <h1 style={"background-color: " + unit.color}>{unit.title}</h1>
             <h2>{unit.code}</h2>
             <p>{unit.description}</p>
+
+            {#if unit.workitems.length > 0}
+                <h3>Artefacts</h3>
+                <Masonry gridGap="10px">
+                    {#each unit.workitems as artefact (artefact.slug)}
+                        <WorkItem data={artefact} maxWidth={300} />
+                    {/each}
+                </Masonry>
+            {/if}
         {/each}
     {/if}
 </div>

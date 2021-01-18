@@ -1,12 +1,13 @@
 <script>
-    export let data;
     import Lazy from 'svelte-lazy';
     import SmallPlaceholder from './SmallPlaceholder.svelte';
+
+    export let data;
+    export let maxWidth = 800;
 </script>
 
 <style>
     div {
-        max-width: 800px;
         position: relative;
     }
 
@@ -26,7 +27,7 @@
 </style>
 
 <a href={"/work/"+data.slug}>
-    <div class="darkBackground">
+    <div class="darkBackground" style={"max-width: " + maxWidth + "px"}>
         <Lazy 
         height={300} 
         placeholder={SmallPlaceholder}
