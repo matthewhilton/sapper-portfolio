@@ -14,6 +14,7 @@
     import SmallPlaceholder from "../../components/SmallPlaceholder.svelte"
     import Masonry from 'svelte-masonry/Masonry.svelte';
 import UnitItem from '../../components/UnitItem.svelte';
+import StackItem from '../../components/StackItem.svelte';
 
     const q = query(GET_WORKITEM, { variables: { "slug": slug }})
 
@@ -30,6 +31,13 @@ import UnitItem from '../../components/UnitItem.svelte';
     img {
         width: 100%;
         height: auto;
+    }
+
+    .stackContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
     }
 </style>
 
@@ -50,10 +58,20 @@ import UnitItem from '../../components/UnitItem.svelte';
             <h2>{item.year}</h2>
             <p>{item.description}</p>
 
+            {#if item.stackitems.length > 0}
+                <h3> Languages/Stack </h3>
+                <div class="stackContainer">
+                    {#each item.stackitems as stackitem (stackitem.id)}
+                        <StackItem data={stackitem} />
+                    {/each}
+                </div>
+            {/if}
+
             {#if item.studyunit !== null}
                 <h2>Made as part of unit:</h2>
                 <UnitItem data={item.studyunit} minified={true}/>
             {/if}
+            
 
             {#if item.images.length > 0}
                 <h2>Gallery</h2>
@@ -70,6 +88,8 @@ import UnitItem from '../../components/UnitItem.svelte';
                     {/each}
                 </Masonry>
             {/if}
+
+            
         {/each}
     {/if}
 </div>

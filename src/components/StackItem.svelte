@@ -6,8 +6,8 @@
 
 <style>
     img {
-        width: 30px;
-        height: auto;
+        width: auto;
+        height: 30px;
     }
 
     div {

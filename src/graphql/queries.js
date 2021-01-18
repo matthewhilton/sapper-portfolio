@@ -70,6 +70,13 @@ query GetWorkitem($slug: String!){
       color
       code
     }
+    stackitems {
+      id
+      logo {
+        url
+      }
+      title
+    }
   }
 }
 `

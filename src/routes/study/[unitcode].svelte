@@ -23,6 +23,7 @@ import StackItem from '../../components/StackItem.svelte';
     .container {
         margin-left: 10px;
         margin-right: 10px;
+        margin-top: 30px;
     }
 
     h1 {
@@ -34,6 +35,7 @@ import StackItem from '../../components/StackItem.svelte';
         display: flex;
         flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
     }
 
 </style>
