@@ -1,5 +1,7 @@
 
 <script>
+import FeaturedGallery from "../components/FeaturedGallery.svelte";
+
 	import FeaturedItem from "../components/FeaturedItem.svelte";
 	import Hero from "../components/Hero.svelte"
 </script>
@@ -35,21 +37,7 @@
 
 <Hero />
 
-<FeaturedItem data={{
-	id: 1,
-	coverImageUrl: "https://storage.googleapis.com/portfolio_imagestore/application::workitem.workitem/c45736eaeb644e2aa3c6e4e67a08c7b6.png",
-	coverImageAlt: "Petrichor task manager cover",
-	title: "Petrichor Task Manager",
-	shortDescription: "Driven by the amount of due dates and tasks to remember at university, I created Petrichor so I could easily keep track of these and access them anywhere.",
-}} flipped={false}/>
-
-<FeaturedItem data={{
-	id: 1,
-	coverImageUrl: "https://storage.googleapis.com/portfolio_imagestore/application::workitem.workitem/c45736eaeb644e2aa3c6e4e67a08c7b6.png",
-	coverImageAlt: "Petrichor task manager cover",
-	title: "Petrichor Task Manager",
-	shortDescription: "Driven by the amount of due dates and tasks to remember at university, I created Petrichor so I could easily keep track of these and access them anywhere.",
-}} flipped={true}/>
+<FeaturedGallery />
 
 <a href="/work#other" id="more">
 	<div>

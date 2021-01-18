@@ -7,7 +7,7 @@
 
     export let data = {};
     export let flipped = false;
-    $: projectLink = "/work/" + data.id
+    $: projectLink = "/work/" + data.slug
 </script>
 
 <style>
@@ -79,8 +79,7 @@
 <div id="outer" class="{!flipped ? 'reverseFlex' : ''}">
     <div id="inner" class:flipped>
         <h1 class:flipped>{data.title}</h1>
-        <p class:flipped>{data.shortDescription}</p>
-
+        <p class:flipped>{data.shortdescription}</p>
         
         <Hoverable let:hovering={hovering}>
             <a href={projectLink}>
@@ -104,8 +103,8 @@
     placeholderProps={{size: 300}}
     >
         <img id="coverImage"
-        alt={data.coverImageAlt}
-        src={data.coverImageUrl}
+        alt="cover"
+        src={data.cover.url}
          />
     </Lazy>
 </div>

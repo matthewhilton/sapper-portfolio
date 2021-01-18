@@ -1,0 +1,69 @@
+<script context="module">
+	export async function preload(page, session) {
+		const { slug } = page.params;
+        return {slug}
+	}
+</script>
+
+<script>
+    export let slug;
+
+    import { GET_WORKITEM } from '../../graphql/queries'
+    import { query } from "svelte-apollo"
+    import Lazy from 'svelte-lazy';
+    import SmallPlaceholder from "../../components/SmallPlaceholder.svelte"
+    import Masonry from 'svelte-masonry/Masonry.svelte';
+
+    const q = query(GET_WORKITEM, { variables: { "slug": slug }})
+
+    $: q.refetch({ "slug": slug })
+</script>
+
+<style>
+    .container {
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+
+<div class="container">
+    {#if $q.loading}
+    <p>Loading...</p>
+    {:else if $q.error}
+    <p> Error loading: {$q.error.message} </p>
+    {:else}
+        {#each [$q.data.workitem] as item (item.id)}
+            <Lazy
+                height={600} 
+                placeholder={SmallPlaceholder}
+                >
+                <img alt="cover" src={item.cover.url} />
+            </Lazy>
+            <h1>{item.title}</h1>
+            <h2>{item.year}</h2>
+            <p>{item.description}</p>
+
+            {#if item.images.length > 0}
+                <h2>Gallery</h2>
+                <Masonry gridGap="10px">
+                    {#each item.images as image (image.url)}
+                    <a href={"/work/"+slug+"/"+image.id}>
+                        <Lazy
+                        height={300} 
+                        placeholder={SmallPlaceholder}
+                        >
+                            <img alt="gallery" src={image.url} />
+                        </Lazy>
+                    </a>
+                    {/each}
+                </Masonry>
+            {/if}
+        {/each}
+    {/if}
+</div>

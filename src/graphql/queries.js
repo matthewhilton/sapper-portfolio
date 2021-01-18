@@ -18,6 +18,13 @@ query UnitData($unitcode: String!) {
     color
     code
     description
+    workitems {
+      title
+      slug
+      cover {
+        url
+      }
+    }
   }
 }
 `
@@ -33,6 +40,33 @@ query {
     cover {
       url
     }
+  }
+}
+`
+
+export const GET_WORKITEM = gql`
+query GetWorkitem($slug: String!){
+  workitem(where: { slug: $slug}){
+    title
+    year
+    description
+    images {
+      url
+      id
+    }
+    cover {
+      url
+      id
+    }
+  }
+}
+`
+
+export const GET_IMAGE = gql`
+query GetImage($imageId: ID!){
+  asset(where: { id: $imageId}){
+    id
+    url
   }
 }
 `

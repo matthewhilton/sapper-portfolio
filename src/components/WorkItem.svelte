@@ -25,19 +25,20 @@
     }
 </style>
 
-<div class="darkBackground">
-    <Lazy 
-    height={300} 
-    placeholder={SmallPlaceholder}
-    placeholderProps={{size: 300}}
-    >
-        <img
-        alt="cover"
-        src={data.cover.url}
-         />
-    </Lazy>
+<a href={"/work/"+data.slug}>
+    <div class="darkBackground">
+        <Lazy 
+        height={300} 
+        placeholder={SmallPlaceholder}
+        >
+            <img
+            alt="cover"
+            src={data.cover.url}
+            />
+        </Lazy>
 
-    <h3 class="label darkBackground">{data.title}</h3>
-</div>
+        <h3 class="label darkBackground">{data.title}</h3>
+    </div>
+</a>
 
 
