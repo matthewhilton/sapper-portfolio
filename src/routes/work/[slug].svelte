@@ -13,6 +13,7 @@
     import Lazy from 'svelte-lazy';
     import SmallPlaceholder from "../../components/SmallPlaceholder.svelte"
     import Masonry from 'svelte-masonry/Masonry.svelte';
+import UnitItem from '../../components/UnitItem.svelte';
 
     const q = query(GET_WORKITEM, { variables: { "slug": slug }})
 
@@ -48,6 +49,11 @@
             <h1>{item.title}</h1>
             <h2>{item.year}</h2>
             <p>{item.description}</p>
+
+            {#if item.studyunit !== null}
+                <h2>Made as part of unit:</h2>
+                <UnitItem data={item.studyunit} minified={true}/>
+            {/if}
 
             {#if item.images.length > 0}
                 <h2>Gallery</h2>

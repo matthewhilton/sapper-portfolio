@@ -52,11 +52,14 @@ query GetWorkitem($slug: String!){
     description
     images {
       url
-      id
     }
     cover {
       url
-      id
+    }
+    studyunit {
+      title
+      color
+      code
     }
   }
 }
