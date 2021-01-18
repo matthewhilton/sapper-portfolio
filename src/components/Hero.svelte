@@ -38,11 +38,17 @@
     #subtitle > p {
         font-size: 1em;
     }
+
+    .small {
+        font-size: 15px;
+        color: grey;
+    }
 </style>
 
 <div id="main">
     <h1> Hi, i'm matt 👋 </h1>
     <p> I ❤️ web development </p>
+    <p class="small"> (among other things) </p>
 
     <div id="subtitle">
         <div class="icon">

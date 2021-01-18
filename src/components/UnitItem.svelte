@@ -30,13 +30,15 @@
 
 </style>
 
-<div class="container" style="--theme-color: {data.color}">
-    <h1>{data.title}</h1>
+<a href={"/study/"+data.unitCode}>
+    <div class="container" style="--theme-color: {data.color}">
+        <h1>{data.title}</h1>
 
-    <div class="inner">
-        <b><p>{data.unitCode}</p></b>
-        <p>{data.tagline}</p>
+        <div class="inner">
+            <b><p>{data.unitCode}</p></b>
+            <p>{data.tagline}</p>
+        </div>
     </div>
-</div>
+</a>
 
 

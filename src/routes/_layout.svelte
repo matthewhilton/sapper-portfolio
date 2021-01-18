@@ -1,5 +1,10 @@
 <script>
 	import Nav from '../components/Nav.svelte';
+
+	import { setClient } from "svelte-apollo";
+	import { client } from '../graphql/apollo';
+
+	setClient(client);
 </script>
 
 <style>

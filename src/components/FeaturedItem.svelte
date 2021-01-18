@@ -3,11 +3,11 @@
     import ImagePlaceholder from './ImagePlaceholder.svelte';
     import FaRegFolder from 'svelte-icons/fa/FaRegFolder.svelte'
     import FaRegFolderOpen from 'svelte-icons/fa/FaRegFolderOpen.svelte'
-import Hoverable from './Hoverable.svelte';
+    import Hoverable from './Hoverable.svelte';
 
     export let data = {};
     export let flipped = false;
-    $: projectLink = "/item/" + data.id
+    $: projectLink = "/work/" + data.id
 </script>
 
 <style>
