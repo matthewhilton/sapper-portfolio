@@ -60,6 +60,7 @@ query GetWorkitem($slug: String!){
     year
     description
     images {
+      id
       url
     }
     cover {

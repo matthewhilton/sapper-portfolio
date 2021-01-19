@@ -4,6 +4,7 @@
 
     export let data;
     export let maxWidth = 800;
+    export let onLoad = function(){};
 </script>
 
 <style>
@@ -33,6 +34,7 @@
         placeholder={SmallPlaceholder}
         >
             <img
+            on:load={onLoad}
             alt="cover"
             src={data.cover.url}
             />

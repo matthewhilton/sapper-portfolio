@@ -49,7 +49,7 @@ import SubHeading from "../components/SubHeading.svelte";
     <p> I am in the process of learning Norweigan, and would say I am on level A2. I can have basic conversations and watch Norweigan TV (with subtitles) and read simple articles easily. 
         Due to the similarity to Norweigan, I often can also read articles in Swedish and Danish which is pretty cool.</p>
         <p>I'm mostly just learning it for fun in my spare time (not taking any classes or anything like that). Once I become proficient in Norweigan I hope to also learn German (a bit more of a complex language). </p>
-    <p>Norsk: Jeg lærer norsk og kan forstå noen norsk. Jeg kan lese enkelt enkle artikler. Jeg kan ofte lese artikler på svensk og dansk. Jeg lærer det bare for moro i fritiden min. </p>
+    <p>Norsk: Jeg lærer norsk og kan forstå noen norsk. Jeg kan lese enkelt enkle artikler. Jeg kan ofte lese artikler på svensk og dansk også. Jeg lærer det bare for moro i fritiden min. </p>
     <SubHeading title={"Programming"} />
     <p> While I have used many languages in the past, I mostly focus my time on my web development skills. Obviously this means I know <b>Javascript</b> very well, having used the <b>React</b> framework extensively. I have started also learning about <b>Svelte</b> (the framework that built this site!). </p>
     <p> Other languages I am familiar with include: Python, C#, Java, Matlab, React Native, and C.</p>

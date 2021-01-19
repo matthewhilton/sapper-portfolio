@@ -39,6 +39,10 @@ import StackItem from '../../components/StackItem.svelte';
         align-items: center;
         flex-wrap: wrap;
     }
+
+    .galleryImg {
+        max-width: 400px;
+    }
 </style>
 
 <div class="container">
@@ -82,7 +86,7 @@ import StackItem from '../../components/StackItem.svelte';
                         height={300} 
                         placeholder={SmallPlaceholder}
                         >
-                            <img alt="gallery" src={image.url} />
+                            <img class="galleryImg" alt="gallery" src={image.url} />
                         </Lazy>
                     </a>
                     {/each}

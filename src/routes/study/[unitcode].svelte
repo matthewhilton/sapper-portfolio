@@ -10,13 +10,15 @@
 
     import { GET_UNIT_DATA } from '../../graphql/queries'
     import { query } from "svelte-apollo"
-import Masonry from 'svelte-masonry/Masonry.svelte';
-import WorkItem from '../../components/WorkItem.svelte';
-import StackItem from '../../components/StackItem.svelte';
+    import Masonry from 'svelte-masonry/Masonry.svelte';
+    import WorkItem from '../../components/WorkItem.svelte';
+    import StackItem from '../../components/StackItem.svelte';
 
     const dataQuery = query(GET_UNIT_DATA, { variables: { "unitcode": unitcode }})
 
     $: dataQuery.refetch({ "unitcode": unitcode})
+
+    let refreshLayout;
 </script>
 
 <style>
@@ -53,9 +55,9 @@ import StackItem from '../../components/StackItem.svelte';
 
             {#if unit.workitems.length > 0}
                 <h3>Artefacts</h3>
-                <Masonry gridGap="10px">
+                <Masonry gridGap="10px" bind:refreshLayout={refreshLayout}>
                     {#each unit.workitems as artefact (artefact.id)}
-                        <WorkItem data={artefact} maxWidth={300} />
+                        <WorkItem data={artefact} maxWidth={300} onLoad={refreshLayout}/>
                     {/each}
                 </Masonry>
             {/if}

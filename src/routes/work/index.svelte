@@ -11,6 +11,9 @@
     import { query } from "svelte-apollo"
 
     const q = query(GET_WORKITEMS_LIST)
+
+    let refreshLayoutFeatured;
+    let refreshLayoutOther;
 </script>
 
 <style>
@@ -26,19 +29,19 @@
     <p> Error loading: {$q.error.message} </p>
     {:else if $q.data}
         <div class="header"><Heading title="Featured" /></div>
-        <Masonry gridGap="10px">
+        <Masonry gridGap="10px" bind:refreshLayout={refreshLayoutFeatured}>
             {#each $q.data.workitems as item}
                 {#if item.featured}
-                    <WorkItem data={item}/>
+                    <WorkItem data={item} onLoad={refreshLayoutFeatured}/>
                 {/if}
             {/each}
         </Masonry>
 
         <div class="header" id="other"><Heading title="Other Projects" /></div>
-        <Masonry gridGap="10px">
+        <Masonry gridGap="10px" bind:refreshLayout={refreshLayoutOther}>
             {#each $q.data.workitems as item}
                 {#if !item.featured}
-                    <WorkItem data={item}/>
+                    <WorkItem data={item} onLoad={refreshLayoutOther} />
                 {/if}
             {/each}
         </Masonry>

@@ -3,8 +3,17 @@
 
 	import { setClient } from "svelte-apollo";
 	import { client } from '../graphql/apollo';
+	import { onMount } from 'svelte';
+	import { goto } from '@sapper/app'
 
 	setClient(client);
+
+	onMount(() => {
+		window.onunhandledrejection = (e) => {
+			// Redirect to error page if there is ever and error
+			throw new Error(500, e.message)
+		}
+	})
 </script>
 
 <style>
