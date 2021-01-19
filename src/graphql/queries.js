@@ -78,6 +78,7 @@ query GetWorkitem($slug: String!){
       }
       title
     }
+    githubUrl
   }
 }
 `

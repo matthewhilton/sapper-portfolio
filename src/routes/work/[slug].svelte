@@ -15,6 +15,7 @@
     import Masonry from 'svelte-masonry/Masonry.svelte';
 import UnitItem from '../../components/UnitItem.svelte';
 import StackItem from '../../components/StackItem.svelte';
+import FaLink from 'svelte-icons/fa/FaLink.svelte'
 
     const q = query(GET_WORKITEM, { variables: { "slug": slug }})
 
@@ -43,6 +44,17 @@ import StackItem from '../../components/StackItem.svelte';
     .galleryImg {
         max-width: 400px;
     }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .linkContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 </style>
 
 <div class="container">
@@ -59,7 +71,17 @@ import StackItem from '../../components/StackItem.svelte';
                 <img alt="cover" src={item.cover.url} />
             </Lazy>
             <h1>{item.title}</h1>
-            <h2>{item.year}</h2>
+           
+                <h2>{item.year}</h2>
+                {#if item.githubUrl}
+                    <div class="linkContainer">
+                        <div class="icon">
+                            <FaLink />
+                        </div>
+                        <a href={item.githubUrl} style="margin-left: 5px;"> <h3>Github Repository</h3> </a>
+                    </div>
+                {/if}
+           
             <p>{item.description}</p>
 
             {#if item.stackitems.length > 0}
@@ -76,7 +98,6 @@ import StackItem from '../../components/StackItem.svelte';
                 <UnitItem data={item.studyunit} minified={true}/>
             {/if}
             
-
             {#if item.images.length > 0}
                 <h2>Gallery</h2>
                 <Masonry gridGap="10px">
@@ -92,8 +113,6 @@ import StackItem from '../../components/StackItem.svelte';
                     {/each}
                 </Masonry>
             {/if}
-
-            
         {/each}
     {/if}
 </div>

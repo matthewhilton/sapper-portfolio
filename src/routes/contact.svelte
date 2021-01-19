@@ -33,6 +33,9 @@ import SubHeading from "../components/SubHeading.svelte";
     <div class="horizontal"> 
         <b>Email: <a href="mailto:mj.hilton@outlook.com">mj.hilton@outlook.com</a></b>
     </div>
+    <div class="horizontal"> 
+        <b>Github: <a href="https://github.com/unxpctederr">unxpctederr</a></b>
+    </div>
     <div class="horizontal">
         <b>LinkedIn: <a href="https://www.linkedin.com/in/matthew-hilton1234/">Matthew Hilton</a></b>
     </div>
