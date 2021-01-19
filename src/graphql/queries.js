@@ -90,4 +90,18 @@ query GetImage($imageId: ID!){
   }
 }
 `
+
+export const GET_BLOGPOSTS = gql`
+query {
+  blogposts {
+    id
+    title
+    author
+    url
+    image {
+      url
+    }
+  }
+}
+`
   

@@ -6,20 +6,22 @@
 
 <style>
     img {
-        height: auto;
+        height: 100px;
         max-width: 200px;
+        width: auto;
     }
 
     .container {
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
 
     .sideContainer {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        margin: 5px;
+        margin: 10px;
     }
 
     .icon {
@@ -34,6 +36,7 @@
 
         img {
             width: 100%;
+            height: auto;
             max-width: none;
         }
     }
@@ -49,13 +52,12 @@
     }
 </style>
 
-<a href={data.guid}>
+<a href={data.url}>
     <div class="container">
-        <img src={data.thumbnail} alt="medium story cover" />
+        <img src={data.image.url} alt="medium story cover" />
 
         <div class="sideContainer">
             <h2>{data.title}</h2>
-            <p>{data.pubDate}</p>
             <span>
                 <h3>{data.author}&nbsp;</h3>
                 <div class="icon"><FaMedium /></div>
