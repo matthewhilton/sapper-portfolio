@@ -16,6 +16,8 @@
     }
 
     #outer {
+        margin-left: auto;
+        margin-right: auto;
         width: 80%;
         display: flex;
         margin-bottom: 50px;
