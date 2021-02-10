@@ -6,18 +6,20 @@
     #main {
         margin-top: 30px;
         margin-bottom: 10px;
-        background-color: rgb(224, 217, 210);
     }
 
     #inner {
         background-color: rgba(0,0,0,0);
-        padding: 10px;
         display: flex;
     }
 
     h4 {
         background-color: rgba(0,0,0,0);
         margin: 0;
+        color: #8ae3a5;
+        
+        border-bottom: 2px solid;
+        border-color: #4c9161
     }
 </style>
 

@@ -8,7 +8,8 @@
         padding: 10px;
         font-size: 20px;
         margin: 0;
-        background-color: rgb(245, 241, 237);
+        background-color: rgba(0,0,0,0.3);
+        color: white;
 	}
 
     .container {

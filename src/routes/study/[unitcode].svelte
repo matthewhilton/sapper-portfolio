@@ -34,6 +34,14 @@
         padding: 10px;
     }
 
+    h2, h3, p {
+        color: white;
+    }
+
+    p {
+        font-size: 120%;
+    }
+
     .stackContainer {
         display: flex;
         flex-direction: row;
@@ -56,7 +64,7 @@
 
             {#if unit.workitems.length > 0}
                 <h3>Artefacts</h3>
-                <Masonry gridGap="10px" bind:refreshLayout={refreshLayout}>
+                <Masonry gridGap="10px" bind:refreshLayout={refreshLayout} stretchFirst={false}>
                     {#each unit.workitems as artefact (artefact.id)}
                         <WorkItem data={artefact} maxWidth={300} onLoad={refreshLayout}/>
                     {/each}

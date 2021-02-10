@@ -39,7 +39,7 @@
     }
 
     nav > a:hover {
-        background-color: #3d362f;
+        background-color: #161a1d;
         color: white;
     }
 

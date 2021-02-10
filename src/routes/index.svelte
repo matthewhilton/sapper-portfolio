@@ -12,7 +12,7 @@ import FeaturedGallery from "../components/FeaturedGallery.svelte";
 
 <style>
 	h3 {
-		background-color: #3d362f;
+		background-color: #1b2225;
 		color: white;
 		margin: 0;
 	}
@@ -25,7 +25,7 @@ import FeaturedGallery from "../components/FeaturedGallery.svelte";
 	}
 
 	#more > div {
-		background-color: #3d362f;
+		background-color: #1b2225;
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;

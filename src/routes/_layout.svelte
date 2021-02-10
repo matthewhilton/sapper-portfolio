@@ -20,11 +20,11 @@
 	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 	:global(*) {
 		font-family: 'Roboto', sans-serif;
-		background-color: rgb(245, 241, 237);
+		background-color: #283338;
 	}
 
 	:global(h1, h2, h3, p, a) {
-		color: black;
+		color: #8ae3a5;
 		text-decoration: none;
 	}
 

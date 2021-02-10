@@ -13,9 +13,9 @@
     import Lazy from 'svelte-lazy';
     import SmallPlaceholder from "../../components/SmallPlaceholder.svelte"
     import Masonry from 'svelte-masonry/Masonry.svelte';
-import UnitItem from '../../components/UnitItem.svelte';
-import StackItem from '../../components/StackItem.svelte';
-import FaLink from 'svelte-icons/fa/FaLink.svelte'
+    import UnitItem from '../../components/UnitItem.svelte';
+    import StackItem from '../../components/StackItem.svelte';
+    import FaLink from 'svelte-icons/fa/FaLink.svelte'
 
     const q = query(GET_WORKITEM, { variables: { "slug": slug }})
 
@@ -54,6 +54,15 @@ import FaLink from 'svelte-icons/fa/FaLink.svelte'
         display: flex;
         flex-direction: row;
         align-items: center;
+        color: grey;
+    }
+
+    h1, h2, h3, p {
+        color: white;
+    }
+
+    p {
+        font-size: 120%;
     }
 </style>
 

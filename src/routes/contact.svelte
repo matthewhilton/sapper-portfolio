@@ -5,16 +5,21 @@
 <script>
 import Heading from "../components/Heading.svelte"
 import SubHeading from "../components/SubHeading.svelte";
+import FaGithub from 'svelte-icons/fa/FaGithub.svelte'
+import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte'
+import FaRegPaperPlane from 'svelte-icons/fa/FaRegPaperPlane.svelte'
+
 </script>
 
 <style>
     .horizontal {
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
 
     a {
-        color: rgb(171, 158, 145);
+        color: white;
     }
 
     b {
@@ -26,18 +31,35 @@ import SubHeading from "../components/SubHeading.svelte";
         margin-left: 10px;
         margin-right: 10px;
     }
+
+    b, p {
+        color: white;
+        text-align: justify;
+        text-justify: auto;   
+    }
+    
+    .icon {
+        color: white;
+        width: 20px;
+        height: 20px;
+        margin: 10px;
+        margin-left: 0px;
+    }
 </style>
 
 <div class="container">
     <Heading title={"Contact"} />
     <div class="horizontal"> 
-        <b>Email: <a href="mailto:mj.hilton@outlook.com">mj.hilton@outlook.com</a></b>
+        <div class="icon"><FaRegPaperPlane /></div>
+        <a href="mailto:mj.hilton@outlook.com">mj.hilton@outlook.com</a>
     </div>
     <div class="horizontal"> 
-        <b>Github: <a href="https://github.com/unxpctederr">unxpctederr</a></b>
+        <div class="icon"><FaGithub /></div>
+        <a href="https://github.com/unxpctederr">unxpctederr</a>
     </div>
     <div class="horizontal">
-        <b>LinkedIn: <a href="https://www.linkedin.com/in/matthew-hilton1234/">Matthew Hilton</a></b>
+        <div class="icon"><FaLinkedin /></div>
+        <a href="https://www.linkedin.com/in/matthew-hilton1234/">Matthew Hilton</a>
     </div>
     <Heading title={"About Me"} />
     <p>I love making things and doing stuff such as programming microcontrollers (Arduino, teensy, ESP), setting up automation projects (Raspberry Pi) and even making websites (NodeJS, React, Svelte).</p><p>When I find a problem, I learn how to solve it and have fun along the way.</p>
@@ -49,7 +71,7 @@ import SubHeading from "../components/SubHeading.svelte";
 
     <Heading title={"Skills and Experience"} />
     <SubHeading title={"Languages"} />
-    <p> I am in the process of learning Norweigan, and would say I am on level A2. I can have basic conversations and watch Norweigan TV (with subtitles) and read simple articles easily. 
+    <p> I am in the process of learning 🇳🇴 Norweigan, and would say I am on level A2. I can have basic conversations and watch Norweigan TV (with subtitles) and read simple articles easily. 
         Due to the similarity to Norweigan, I often can also read articles in Swedish and Danish which is pretty cool.</p>
         <p>I'm mostly just learning it for fun in my spare time (not taking any classes or anything like that). Once I become proficient in Norweigan I hope to also learn German (a bit more of a complex language). </p>
     <p>Norsk: Jeg lærer norsk og kan forstå noen norsk. Jeg kan lese enkelt enkle artikler. Jeg kan ofte lese artikler på svensk og dansk også. Jeg lærer det bare for moro i fritiden min. </p>

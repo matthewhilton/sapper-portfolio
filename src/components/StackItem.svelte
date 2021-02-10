@@ -18,6 +18,7 @@
 
     h4 {
         margin-left: 5px;
+        color: white;
     }
 </style>
 

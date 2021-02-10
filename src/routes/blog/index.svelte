@@ -15,6 +15,10 @@
         margin-right: 10px;
         margin-top: 30px;
     }
+
+    h2 {
+        color: white;
+    }
 </style>
 
 <div class="container">
@@ -26,5 +30,9 @@
         {#each $q.data.blogposts as post (post.id)}
             <MediumStoryCard data={post} />
         {/each}
+
+        {#if $q.data.blogposts.length == 0}
+            <h2> No blog posts found </h2>
+        {/if}
     {/if}
 </div>

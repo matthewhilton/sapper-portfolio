@@ -9,10 +9,11 @@
 
     p {
         font-size: 1.3em;
+        color: #f5f2e8;
     }
 
     #main {
-        margin-top: 20mm;
+        margin-top: 45mm;
         text-align: center;
         width: 100%;
         align-items: center;
@@ -20,7 +21,7 @@
     }
 
     #subtitle {
-        margin-top: 300px;
+        margin-top: 160px;
         display: flex;
         flex-direction: row;
         align-items: center;

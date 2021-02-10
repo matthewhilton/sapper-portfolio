@@ -25,6 +25,13 @@ query UnitData($unitcode: String!) {
       cover {
         url
       }
+      stackitems {
+        id
+        logo {
+          url
+        }
+        title
+      }
     }
     stackitems {
       id
@@ -48,6 +55,13 @@ query {
     id
     cover {
       url
+    }
+    stackitems {
+      id
+      logo {
+        url
+      }
+      title
     }
   }
 }

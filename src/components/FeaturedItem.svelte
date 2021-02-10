@@ -42,6 +42,7 @@
     p {
         max-width: 500px;
         font-size: 14px;
+        color: #bfbfbf;
     }
 
     h1 {
@@ -58,6 +59,7 @@
         display: flex;
         align-items: center;
         flex-direction: row;
+        color: #bfbfbf;
     }
 
     @media only screen and (max-width: 1200px) {
