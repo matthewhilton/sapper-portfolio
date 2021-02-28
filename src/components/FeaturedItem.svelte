@@ -78,6 +78,9 @@
         max-width: 100%;
         }
 
+   
+    }
+
     .stackItem {
         margin-right: 5px;
         width: 20px;
@@ -85,18 +88,21 @@
     }
 
     .stackitemcontainer {
-        margin-bottom: 10px;
-    }
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px;
     }
 </style>
 
 <div id="outer" class="{!flipped ? 'reverseFlex' : ''}">
     <div id="inner" class:flipped>
-        <h1 class:flipped>{data.title}</h1>
+        <h1 class:flipped>{data.title}</h1>    
         <p class:flipped>{data.shortdescription}</p>
-        
+
         {#if data.stackitems.length > 0}
-            <div class="darkBackground stackitemcontainer">
+            <div class="stackitemcontainer">
                 {#each data.stackitems as stackitem (stackitem.id)}
                     <img class="stackItem" src={stackitem.logo.url} alt="stackitem logo" />
                 {/each}
@@ -122,6 +128,10 @@
     <Lazy 
     height={700} 
     placeholder={ImagePlaceholder}
+    fadeOption={{
+        delay: 100,
+        duration: 500
+    }}
     >
         <img id="coverImage"
         alt="cover"

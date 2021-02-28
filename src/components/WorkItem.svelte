@@ -47,8 +47,10 @@
 <a href={"/work/"+data.slug}>
     <div class="darkBackground" style={"max-width: " + maxWidth + "px"}>
         <Lazy height={200}
-        offset={0}
-        class="darkBackground"
+        fadeOption={{
+            delay: 100,
+            duration: 500
+        }}
         placeholder={SmallPlaceholder}
         >
             <img
