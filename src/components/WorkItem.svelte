@@ -26,7 +26,7 @@
     }
 
     .darkBackground {
-        background-color: #1e2529;
+        background-color: #1e2529; 
     }
 
     .bottom {
@@ -46,17 +46,25 @@
 
 <a href={"/work/"+data.slug}>
     <div class="darkBackground" style={"max-width: " + maxWidth + "px"}>
-        <img
-            on:load={onLoad}
-            alt="cover"
-            src={data.cover.url}
-            />
+        <Lazy height={200}
+        offset={0}
+        class="darkBackground"
+        placeholder={SmallPlaceholder}
+        >
+            <img
+                on:load={onLoad}
+                alt="cover"
+                src={data.cover.url}
+                />
+        </Lazy>
         <h3 class="label darkBackground">{data.title}</h3>
 
         {#if data.stackitems.length > 0}
             <div class="bottom darkBackground">
                 {#each data.stackitems as stackitem (stackitem.id)}
-                    <img class="stackItem" src={stackitem.logo.url} alt="stackitem logo" />
+                    
+                        <img class="stackItem" src={stackitem.logo.url} alt="stackitem logo" />
+
                 {/each}
             </div>
         {/if}

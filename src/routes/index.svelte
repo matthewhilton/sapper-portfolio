@@ -1,8 +1,6 @@
 
 <script>
-import FeaturedGallery from "../components/FeaturedGallery.svelte";
-
-	import FeaturedItem from "../components/FeaturedItem.svelte";
+	import FeaturedGallery from "../components/FeaturedGallery.svelte";
 	import Hero from "../components/Hero.svelte"
 </script>
 

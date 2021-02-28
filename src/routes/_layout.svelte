@@ -20,6 +20,9 @@
 	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 	:global(*) {
 		font-family: 'Roboto', sans-serif;
+	}
+
+	:global(html) {
 		background-color: #283338;
 	}
 
@@ -33,7 +36,6 @@
 		justify-content: center;
 		padding: 20px;
 		margin-bottom: 300px;
-
 	}
 
 	main {
@@ -43,6 +45,8 @@
 	#flex {
 		width: 1200px;
 	}
+
+	
 
 	@media only screen and (max-width: 1200px) {
 		main {

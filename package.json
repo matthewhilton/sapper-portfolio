@@ -45,9 +45,11 @@
     "svelte-css-vars": "0.0.1",
     "svelte-grid": "^4.0.0",
     "svelte-grid-responsive": "^0.3.0",
+    "svelte-image-loader": "^1.0.5",
     "svelte-lazy": "^1.0.8",
     "svelte-loading-spinners": "^0.1.4",
     "svelte-masonry": "0.0.17",
+    "svelte-skeleton": "^1.0.1",
     "waterfall.js": "^1.1.0"
   }
 }

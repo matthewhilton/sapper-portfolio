@@ -76,6 +76,16 @@
 
       #coverImage {
         max-width: 100%;
+        }
+
+    .stackItem {
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .stackitemcontainer {
+        margin-bottom: 10px;
     }
     }
 </style>
@@ -84,6 +94,14 @@
     <div id="inner" class:flipped>
         <h1 class:flipped>{data.title}</h1>
         <p class:flipped>{data.shortdescription}</p>
+        
+        {#if data.stackitems.length > 0}
+            <div class="darkBackground stackitemcontainer">
+                {#each data.stackitems as stackitem (stackitem.id)}
+                    <img class="stackItem" src={stackitem.logo.url} alt="stackitem logo" />
+                {/each}
+            </div>
+        {/if}
         
         <Hoverable let:hovering={hovering}>
             <a href={projectLink}>
@@ -99,12 +117,11 @@
                 </div>
             </a>
         </Hoverable>
-
+        
     </div>
     <Lazy 
-    height={300} 
+    height={700} 
     placeholder={ImagePlaceholder}
-    placeholderProps={{size: 300}}
     >
         <img id="coverImage"
         alt="cover"

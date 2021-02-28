@@ -67,6 +67,30 @@ query {
 }
 `
 
+export const GET_FEATURED_WORKITEMS = gql`
+query {
+  workitems(where: { featured: true}) {
+    title
+    year
+    featured
+    shortdescription
+    slug
+    id
+    cover {
+      url
+    }
+    stackitems {
+      id
+      logo {
+        url
+      }
+      title
+    }
+  }
+}
+`
+
+
 export const GET_WORKITEM = gql`
 query GetWorkitem($slug: String!){
   workitem(where: { slug: $slug}){

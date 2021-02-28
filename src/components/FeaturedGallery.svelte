@@ -1,9 +1,9 @@
 <script>
-    import { GET_WORKITEMS_LIST } from '../graphql/queries'
+    import { GET_FEATURED_WORKITEMS } from '../graphql/queries'
     import { query } from "svelte-apollo"
     import FeaturedItem from './FeaturedItem.svelte';
 
-    const q = query(GET_WORKITEMS_LIST)
+    const q = query(GET_FEATURED_WORKITEMS)
 </script>
 
 {#if $q.loading}
@@ -11,7 +11,7 @@
 {:else if $q.error}
 <p> Error loading: {$q.error.message} </p>
 {:else}
-    {#each $q.data.workitems.filter(item => item.featured) as item, i (item.slug)}
+    {#each $q.data.workitems as item, i (item.slug)}
         <FeaturedItem data={item} flipped={i % 2 == 1}/>
     {/each}
 {/if}

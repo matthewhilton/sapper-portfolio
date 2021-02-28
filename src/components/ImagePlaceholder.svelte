@@ -1,17 +1,18 @@
 <script>
-    import { Square } from 'svelte-loading-spinners'
+    import { Jellyfish } from 'svelte-loading-spinners'
 </script>
 
 <style>
     div { 
-        width: 500px;
-        height: 600px;
+        width: 100%;
+        height: 700px;
         display: flex;
         align-items: center;
         justify-content: center;
+        min-width: 500px
     }
 </style>
 
 <div>
-    <Square color="#cfc5b4"/>
+    <Jellyfish color="#8ae3a5"/>
 </div>
