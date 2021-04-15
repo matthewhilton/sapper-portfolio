@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export const GET_UNITS_LIST = gql`
 query {
-    studyunits {
+    studyunits(orderBy: priority_ASC) {
       title
       code
       tagline
