@@ -7,8 +7,20 @@ query {
       code
       tagline
       color
+      studyunitFilters {
+        slug
+      }
     }
   }
+`
+
+export const GET_UNIT_FILTERS = gql`
+query {
+  studyunitFilters {
+    title
+    slug
+  }
+}
 `
 
 export const GET_UNIT_DATA = gql`
@@ -18,6 +30,9 @@ query UnitData($unitcode: String!) {
     color
     code
     description
+    studyunitFilters {
+      slug
+    }
     workitems {
       id
       title
@@ -46,7 +61,7 @@ query UnitData($unitcode: String!) {
 
 export const GET_WORKITEMS_LIST = gql`
 query {
-  workitems {
+  workitems(orderBy: pagepriority_DESC) {
     title
     year
     featured
@@ -69,13 +84,14 @@ query {
 
 export const GET_FEATURED_WORKITEMS = gql`
 query {
-  workitems(where: { featured: true}) {
+  workitems(where: { featured: true}, orderBy: pagepriority_DESC) {
     title
     year
     featured
     shortdescription
     slug
     id
+    pagepriority
     cover {
       url
     }

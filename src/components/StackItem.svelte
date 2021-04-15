@@ -4,11 +4,12 @@
 
 <style>
     img {
-        width: auto;
+        height: auto;
         height: 30px;
     }
 
     div {
+        height: 30px;
         display: flex;
         flex-direction: row;
         align-items: center;

@@ -64,6 +64,16 @@
         color: #bfbfbf;
     }
 
+    .stackItem {
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .stackitemcontainer {
+        margin-bottom: 10px;
+    }
+
     @media only screen and (max-width: 1200px) {
       #outer {
           width: 100%;
@@ -77,16 +87,6 @@
       #coverImage {
         max-width: 100%;
         }
-
-    .stackItem {
-        margin-right: 5px;
-        width: 20px;
-        height: 20px;
-    }
-
-    .stackitemcontainer {
-        margin-bottom: 10px;
-    }
     }
 </style>
 

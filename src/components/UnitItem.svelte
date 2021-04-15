@@ -1,5 +1,6 @@
 <script>
     export let data;
+    export let highlighted;
     export let minified = false;
 </script>
 
@@ -9,7 +10,7 @@
         font-size: 20px;
         margin: 0;
         background-color: rgba(0,0,0,0.3);
-        color: white;
+        color: var(--text-color);
 	}
 
     .container {
@@ -24,14 +25,13 @@
 
     p {
         background-color: var(--theme-color);
-        color: white;
+        color: var(--text-color);
         margin: 0;
     }
-
 </style>
 
 <a href={"/study/"+data.code}>
-    <div class="container" style="--theme-color: {data.color}">
+    <div class="container" style="--theme-color: {highlighted ? data.color : "#262626"}; --text-color: {highlighted ? "white" : "grey"}">
         {#if !minified}
             <h1>{data.title}</h1>
 
