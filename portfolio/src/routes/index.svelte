@@ -51,7 +51,16 @@ import SocialButton from "../components/SocialButton.svelte";
     }
 
     #catalyst {
-        color: rgb(243, 61, 61)
+        color: rgb(243, 61, 61);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #catalyst img {
+        height: 40px;
+        width: 70px;
     }
 </style>
 
@@ -65,9 +74,13 @@ import SocialButton from "../components/SocialButton.svelte";
     </div>
 
     <div class="emphasis">
-        <h2> Developer </h2>
-        <h4> Currently working at: </h4>
-        <h3 id="catalyst"> Catalyst IT </h3>
+        <h4> Currently working as: </h4>
+        <h2> PHP Developer </h2>
+
+        <div id="catalyst">
+            <h3> Catalyst IT </h3>
+            <img src="static/catalyst.gif" alt="code icon" id="codeicon" />
+        </div>
     </div>
 
     <div class="header">
@@ -76,7 +89,7 @@ import SocialButton from "../components/SocialButton.svelte";
     </div>
 
     <div class="header">
-        <img src="static/code.gif" alt="code icon" id="codeicon" />
+        <img src="static/art.gif" alt="code icon" id="codeicon" />
         <h2> Art Projects </h2>
     </div>
 </div>
